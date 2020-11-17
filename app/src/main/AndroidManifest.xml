@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Util.ParallelDecompositionActivity"></activity>
+        <activity android:name=".CoroutineTwo"></activity>
+
+        <activity android:name=".ParallelDecompositionActivity" />
         <activity android:name=".CoroutineOne" />
         <activity android:name=".TwoWayBindingActivity" />
         <activity android:name=".ViewModelActivity" />

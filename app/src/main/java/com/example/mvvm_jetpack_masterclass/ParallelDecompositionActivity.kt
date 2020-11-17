@@ -1,4 +1,4 @@
-package com.example.mvvm_jetpack_masterclass.Util
+package com.example.mvvm_jetpack_masterclass
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -8,6 +8,8 @@ class StructuredCoroutine {
     lateinit var deferred : Deferred<Int>
     suspend fun getTotalUserCount():Int {
 
+        //suspending function
+        //scope of parent coroutine ends only after that of all child coroutines
         coroutineScope {
             launch(Dispatchers.IO) {
                 delay(1000)

@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.mvvm_jetpack_masterclass.Util.ViewModel
+import kotlinx.coroutines.launch
 
 class CoroutineThree : AppCompatActivity() {
     private lateinit var model:ViewModel
@@ -19,5 +21,11 @@ class CoroutineThree : AppCompatActivity() {
                 Log.i("jc",it.name)
             }
         })
+
+        //for activities and fragments
+        lifecycleScope.launchWhenCreated {  }
+        lifecycleScope.launchWhenResumed {  }
+        lifecycleScope.launchWhenResumed {  }
+        lifecycleScope.launch {  }
     }
 }

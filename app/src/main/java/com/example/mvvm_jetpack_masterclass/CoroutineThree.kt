@@ -14,9 +14,18 @@ class CoroutineThree : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine_three)
+
+        //viewModel Scope
         model=ViewModelProvider(this).get(ViewModel::class.java)
         model.getData()
         model.students.observe(this, Observer {
+            it.forEach {
+                Log.i("jc",it.name)
+            }
+        })
+
+        //live data builder
+        model.students1.observe(this,{
             it.forEach {
                 Log.i("jc",it.name)
             }

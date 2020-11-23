@@ -1,9 +1,8 @@
 package com.example.mvvm_jetpack_masterclass.Util
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.*
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -17,6 +16,13 @@ import kotlinx.coroutines.withContext
 open class ViewModel(initialName:String): ViewModel() {
     private var repo=StudentRepository()
     var students:MutableLiveData<List<StudentModel>> = MutableLiveData()
+
+    //liveData Builder
+    val students1= liveData(Dispatchers.IO) {
+        val result=repo.getStudents();
+        emit(result)
+    }
+
     private  var name=MutableLiveData<String>()
     val nameValue: LiveData<String>
     get() = name
@@ -45,4 +51,6 @@ open class ViewModel(initialName:String): ViewModel() {
         }
 
     }
+
+
 }

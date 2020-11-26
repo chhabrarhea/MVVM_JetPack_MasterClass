@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm_jetpack_masterclass.Util.TwoWay
+import com.example.mvvm_jetpack_masterclass.util.TwoWay
 import com.example.mvvm_jetpack_masterclass.databinding.ActivityTwoWayBindingBinding
 
 //we can use one way data binding to show the user some data (app to user data flow).

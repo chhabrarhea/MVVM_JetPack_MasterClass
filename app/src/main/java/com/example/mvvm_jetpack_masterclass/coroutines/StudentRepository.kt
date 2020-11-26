@@ -1,5 +1,6 @@
-package com.example.mvvm_jetpack_masterclass.Util
+package com.example.mvvm_jetpack_masterclass.coroutines
 
+import com.example.mvvm_jetpack_masterclass.util.StudentModel
 import kotlinx.coroutines.delay
 
 class StudentRepository {

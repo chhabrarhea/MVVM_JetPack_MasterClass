@@ -1,7 +1,8 @@
-package com.example.mvvm_jetpack_masterclass.Util
+package com.example.mvvm_jetpack_masterclass.coroutines
 
 import androidx.lifecycle.*
 import androidx.lifecycle.ViewModel
+import com.example.mvvm_jetpack_masterclass.util.StudentModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -14,7 +15,7 @@ import kotlinx.coroutines.withContext
 //A ViewModel's onCleared() is called when the app is put into the background and the app process is killed in order to free up the system's memory.
 //To keep the mutable live data private, we keep a live data variable in its place because private variable wont be visible to the activity to observe.
 open class ViewModel(initialName:String): ViewModel() {
-    private var repo=StudentRepository()
+    private var repo= StudentRepository()
     var students:MutableLiveData<List<StudentModel>> = MutableLiveData()
 
     //liveData Builder

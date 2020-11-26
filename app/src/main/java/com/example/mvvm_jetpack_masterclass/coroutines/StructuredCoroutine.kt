@@ -1,4 +1,4 @@
-package com.example.mvvm_jetpack_masterclass.Util
+package com.example.mvvm_jetpack_masterclass.coroutines
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.coroutineScope as coroutineScope

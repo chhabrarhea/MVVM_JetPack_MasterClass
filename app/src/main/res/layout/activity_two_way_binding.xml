@@ -6,7 +6,7 @@
     <data>
         <variable
             name="sname"
-            type="com.example.mvvm_jetpack_masterclass.Util.TwoWay" />
+            type="com.example.mvvm_jetpack_masterclass.util.TwoWay" />
     </data>
 <RelativeLayout
     android:layout_width="match_parent"

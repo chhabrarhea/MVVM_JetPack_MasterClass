@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.mvvm_jetpack_masterclass.Util.StudentModel
+
 import com.example.mvvm_jetpack_masterclass.databinding.ActivityDataBindingBinding
 
 
@@ -40,8 +40,8 @@ class DataBinding : AppCompatActivity() {
 
 
     }
-    private fun getStudent():StudentModel
+    private fun getStudent():  com.example.mvvm_jetpack_masterclass.util.StudentModel
     {
-        return StudentModel("Rhea",29,"rheachhabra1011@gmail.com")
+        return com.example.mvvm_jetpack_masterclass.util.StudentModel("Rhea",29,"rheachhabra1011@gmail.com")
     }
 }

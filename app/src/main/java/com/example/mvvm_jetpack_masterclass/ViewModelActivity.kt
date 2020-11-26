@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm_jetpack_masterclass.Util.ViewModel
-import com.example.mvvm_jetpack_masterclass.Util.ViewModelFactory
+import com.example.mvvm_jetpack_masterclass.coroutines.ViewModel
+import com.example.mvvm_jetpack_masterclass.util.ViewModelFactory
 import com.example.mvvm_jetpack_masterclass.databinding.ActivityViewModelBinding
 
 //The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
@@ -19,7 +19,7 @@ import com.example.mvvm_jetpack_masterclass.databinding.ActivityViewModelBinding
 
 class ViewModelActivity : AppCompatActivity() {
     lateinit var binding:ActivityViewModelBinding
-    lateinit var vm:ViewModel
+    lateinit var vm: ViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          binding=DataBindingUtil.setContentView(this,R.layout.activity_view_model)

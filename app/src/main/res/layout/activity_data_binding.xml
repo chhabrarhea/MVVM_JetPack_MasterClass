@@ -6,7 +6,7 @@
     <data>
         <variable
             name="s"
-            type="com.example.mvvm_jetpack_masterclass.Util.StudentModel" />
+            type="com.example.mvvm_jetpack_masterclass.util.StudentModel" />
     </data>
 <RelativeLayout 
     android:layout_width="match_parent"

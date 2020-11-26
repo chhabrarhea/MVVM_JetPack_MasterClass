@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.mvvm_jetpack_masterclass.R
-import com.example.mvvm_jetpack_masterclass.databinding.ActivityMainBindingImpl
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: com.example.mvvm_jetpack_masterclass.databinding.ActivityMainBinding

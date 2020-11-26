@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".retrofit.DisplayActivity"></activity>
         <activity android:name=".room.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,16 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".coroutines.CoroutineThreeActivity" />
         <activity android:name=".coroutines.CoroutineTwoActivity" />
         <activity android:name=".coroutines.ParallelDecompositionActivity" />
         <activity android:name=".coroutines.CoroutineOneActivity" />
         <activity android:name=".TwoWayBindingActivity" />
         <activity android:name=".ViewModelActivity" />
-        <activity android:name=".DataBinding">
-
-        </activity>
+        <activity android:name=".DataBinding"></activity>
     </application>
 
 </manifest>

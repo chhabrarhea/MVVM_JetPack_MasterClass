@@ -17,10 +17,8 @@ class SubscriberViewModel(private val repo:Repository):ViewModel(),Observable {
     val name=MutableLiveData<String>()
     @Bindable
     val email=MutableLiveData<String>()
-
     @Bindable
     val saveOrUpdateButtonText = MutableLiveData<String>()
-
     @Bindable
     val clearAllOrDeleteButtonText = MutableLiveData<String>()
 

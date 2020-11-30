@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".retrofit.DisplayActivity"></activity>
+        <activity android:name=".workmanager.HomeActivity"></activity>
+        <activity android:name=".retrofit.DisplayActivity" />
         <activity android:name=".room.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +24,7 @@
         <activity android:name=".coroutines.CoroutineOneActivity" />
         <activity android:name=".TwoWayBindingActivity" />
         <activity android:name=".ViewModelActivity" />
-        <activity android:name=".DataBinding"></activity>
+        <activity android:name=".DataBinding" />
     </application>
 
 </manifest>

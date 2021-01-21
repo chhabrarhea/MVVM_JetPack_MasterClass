@@ -5,7 +5,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.MediaController
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -25,14 +29,21 @@ import java.util.jar.Manifest
 
 class PreviewActivity : AppCompatActivity() {
     private var imageCapture: ImageCapture? = null
-
+    lateinit var video:VideoView
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preview)
+        video=findViewById(R.id.video)
 
+        val mediaController=MediaController(this)
+        mediaController.setAnchorView(video)
+        video.setMediaController(mediaController)
+        val uri=Uri.parse("http://d27wqx0d95irnd.cloudfront.net/bueno_main")
+        video.setMediaController(MediaController(this))
+        video.setVideoURI(uri)
 
 
             // Request camera permissions
@@ -43,8 +54,8 @@ class PreviewActivity : AppCompatActivity() {
                     this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
             }
 
-            // Set up the listener for take photo button
-            camera_capture_button.setOnClickListener { takePhoto() }
+//            // Set up the listener for take photo button
+//            camera_capture_button.setOnClickListener { takePhoto() }
 
             outputDirectory = getOutputDirectory()
 
@@ -91,7 +102,7 @@ class PreviewActivity : AppCompatActivity() {
                 val preview = Preview.Builder()
                     .build()
                     .also {
-                        it.setSurfaceProvider(viewFinder.createSurfaceProvider())
+                        it.setSurfaceProvider(viewFinder.surfaceProvider)
                     }
 
                 // Select back camera as a default
@@ -127,6 +138,7 @@ class PreviewActivity : AppCompatActivity() {
         }
 
         override fun onDestroy() {
+            video.stopPlayback()
             super.onDestroy()
             cameraExecutor.shutdown()
         }
@@ -135,11 +147,9 @@ class PreviewActivity : AppCompatActivity() {
             private const val TAG = "CameraXBasic"
             private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
             private const val REQUEST_CODE_PERMISSIONS = 10
-            private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA)
+            private val REQUIRED_PERMISSIONS = arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>, grantResults:
-        IntArray) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (allPermissionsGranted()) {
                 startCamera()
@@ -150,6 +160,28 @@ class PreviewActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+    fun playVideo(v: View)
+    {
+        val b: Button =v as Button
+        if(!video.isPlaying)
+        {
+            video.visibility=View.VISIBLE
+            video.setZOrderOnTop(true)
+            video.start()
+            b.text="Stop Video"
+        }
+        else
+        {
+            video.visibility=View.INVISIBLE
+            video.stopPlayback()
+            b.text="Play Video"
+        }
+    }
+
+    override fun onPause() {
+        video.stopPlayback()
+        super.onPause()
     }
 
     }

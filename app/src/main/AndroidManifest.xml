@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mvvm_jetpack_masterclass">
+
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".unittesting.MainActivity"></activity>
         <activity android:name=".camerax.PreviewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +27,7 @@
         </activity>
         <activity android:name=".workmanager.HomeActivity" />
         <activity android:name=".retrofit.DisplayActivity" />
-        <activity android:name=".room.MainActivity"/>
+        <activity android:name=".room.MainActivity" />
         <activity android:name=".coroutines.CoroutineThreeActivity" />
         <activity android:name=".coroutines.CoroutineTwoActivity" />
         <activity android:name=".coroutines.ParallelDecompositionActivity" />
